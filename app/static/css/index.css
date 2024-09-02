@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.content{
+    background: #EEEBEB;
+    min-height: 250px;
+    width: 80%;
+    border-radius: 2%;
+    box-shadow: 1px 1px 10px #312E2E;
+    margin-top: 2em;
+}
+.inContent{
+    display: flex;
+}
+.abc{
+    height: 200px;
+    width: 200px;
+    background: red;
+}
+.baseh1{
+    animation: normal 2s animacjadoh1;
+    font-family: Algerian, serif;
+    text-shadow: 2px 2px 2px black;
+
+}
+
+
+@keyframes animacjadoh1 {
+    0%{
+        color: black;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}

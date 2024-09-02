@@ -5,9 +5,12 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from django.http import HttpResponse
 from app.models import Class, Computer, User
 from app.serializers import UserSerializer
+from django.views.generic import ListView
 
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 class API(APIView):
@@ -28,3 +31,15 @@ class API(APIView):
             return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
         else:
             return Response({"status": "error", "data": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+class Info(ListView):
+    queryset = User.objects.all()
+    context_object_name = 'infos'
+    paginate_by = 10
+    template_name = 'base.html'
+
+def info_detail(request,year,month,day):
+    info = get_object_or_404(User,
+                                last_reported__year = year,
+                                last_reported__month = month,
+                                last_reported__day = day,)
+    return render(request,"informations.html" ,{'info': info})
