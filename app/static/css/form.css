@@ -6,7 +6,7 @@
     left: 50%;
     top:50%;
     transform: translate(-50%,-50%);
-    background: #EEEBEB;
+    background: #F5F5F5;
     border-radius: 1%;
     box-shadow: 2px 2px 10px #312E2E;
 }
@@ -16,3 +16,17 @@
     align-items: center;
     width: 100%;
 }
+.Logbtn{
+    background-color: #1F2D33;
+    color: white;
+    border-radius: 4%;
+    border: none;
+    width: 50%;
+    cursor: pointer;
+}
+.Logbtn:hover{
+    background-color: black;
+    color: #FAF9F9;
+}
+
+
