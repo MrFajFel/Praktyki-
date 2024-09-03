@@ -1,3 +1,18 @@
-.ContentInForm{
 
+.ContentInForm{
+    display: flex;
+    padding: 2rem;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    background: #EEEBEB;
+    border-radius: 1%;
+    box-shadow: 2px 2px 10px #312E2E;
+}
+.guziklogowania{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

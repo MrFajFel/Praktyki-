@@ -1,11 +1,24 @@
-{% block content %}
-    <div class="form">
-        <div class="ContentInForm">
-            <form method="post">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" id="zaloguj">Zaloguj</button>
-            </form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "css/form.css" %}" rel="stylesheet">
+    </head>
+    <body>
+    {% block content %}
+        <div class="form">
+            <div class="ContentInForm">
+                <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="guziklogowania">
+                            <button type="submit" id="zaloguj" class="Logbtn">Zaloguj</button>
+                        </div>
+                </form>
+            </div>
         </div>
-    </div>
-{% endblock %}
+    {% endblock %}
+    </body>
+</html>

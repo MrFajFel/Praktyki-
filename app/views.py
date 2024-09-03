@@ -49,8 +49,9 @@ def logowanie(request):
     if request.method == 'POST':
         form = LogForm(request.POST)
         if form.is_valid():
-            # if User.objects.all().filter(username=form.cleaned_data['']).exists():
-                return redirect('app:info')
+            for user in User.objects.all():
+                if form.cleaned_data['first_name'] == user.first_name and form.cleaned_data['last_name'] == user.last_name and form.cleaned_data['computer'] == user.computer:
+                    return redirect('app:info')
         else:
             form = LogForm()
     else:
