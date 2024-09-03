@@ -1,0 +1,11 @@
+{% block content %}
+    <div class="form">
+        <div class="ContentInForm">
+            <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" id="zaloguj">Zaloguj</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -9,24 +9,74 @@
     align-items: center;
 }
 .content{
+    display: flex;
     background: #EEEBEB;
-    min-height: 250px;
-    width: 80%;
-    border-radius: 2%;
+    min-height: 200px;
+    width: 95%;
+    border-radius: 1%;
     box-shadow: 1px 1px 10px #312E2E;
     margin-top: 2em;
+    flex-wrap: wrap;
 }
 .inContent{
     display: flex;
 }
-.abc{
-    height: 200px;
-    width: 200px;
-    background: red;
+
+.logi{
+    border-radius: 2%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
+.DoinnejStrony{
+    height: 2rem;
+    width: 80%;
+    text-decoration: none;
+    background-color: #1F2D33;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    box-shadow: 2px 2px 2px black;
+}
+.DoinnejStrony:hover{
+    background-color: #FAF9F9;
+    color: black;
+    animation: normal 1s animacjaguzik;
+    height: 2rem;
+    width: 80%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    box-shadow: 2px 2px 2px black;
+}
+.pagination{
+    display: flex;
+    align-items: flex-end;
+    margin: 1rem;
+}
+@keyframes animacjaguzik {
+    0%{
+        background-color: #1F2D33;
+    }
+    100%{
+        background-color: #FAF9F9;
+    }
+
+}
+
+
 .baseh1{
     animation: normal 2s animacjadoh1;
-    font-family: Algerian, serif;
+    font-family: "Agency FB",serif;
     text-shadow: 2px 2px 2px black;
 
 }

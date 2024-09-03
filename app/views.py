@@ -1,6 +1,7 @@
 import re
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
+from app.form import LogForm
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -34,12 +35,24 @@ class API(APIView):
 class Info(ListView):
     queryset = User.objects.all()
     context_object_name = 'infos'
-    paginate_by = 10
-    template_name = 'base.html'
+    paginate_by = 9
+    template_name = 'logs.html'
 
 def info_detail(request,year,month,day):
     info = get_object_or_404(User,
                                 last_reported__year = year,
                                 last_reported__month = month,
                                 last_reported__day = day,)
-    return render(request,"informations.html" ,{'info': info})
+    return render(request,"logs.html" ,{'infos': infos})
+
+def logowanie(request):
+    if request.method == 'POST':
+        form = LogForm(request.POST)
+        if form.is_valid():
+            # if User.objects.all().filter(username=form.cleaned_data['']).exists():
+                return redirect('app:info')
+        else:
+            form = LogForm()
+    else:
+        form = LogForm()
+    return render(request, 'logowanie.html', {'form': form})
