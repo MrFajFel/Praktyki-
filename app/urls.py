@@ -7,4 +7,5 @@ app_name = 'app'
 urlpatterns = [
     path('logs/',views.Info.as_view() ,name='info'),
     path('',views.logowanie, name="logowanie"),
+    path('wylogowanie/', views.wyloguj, name="wylogowanie"),
 ]
