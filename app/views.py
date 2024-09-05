@@ -64,7 +64,8 @@ def info_detail(request,year,month,day):
     info = get_object_or_404(User,
                                 last_reported__year = year,
                                 last_reported__month = month,
-                                last_reported__day = day,)
+                                last_reported__day = day,
+                                )
     return render(request,"logs.html" ,{'infos': infos})
 
 
@@ -100,3 +101,13 @@ def wyloguj(request):
     response.delete_cookie('Zalogowany')
 
     return response
+
+
+def delete_info(request, year, month, day):
+    info = get_object_or_404(User,
+                             last_reported__year=year,
+                             last_reported__month=month,
+                             last_reported__day=day,
+                             )
+    info.delete()
+    return redirect('/logs')

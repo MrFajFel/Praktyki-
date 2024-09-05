@@ -1,6 +1,8 @@
 from django.db import models
 from django.db.models import Model
 from django.utils import timezone
+from django.urls import reverse
+
 
 
 # Create your models here.
@@ -24,4 +26,12 @@ class User(Model):
     computer = models.ForeignKey(Computer, on_delete=models.CASCADE, related_name='users')
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+
+    # def get_absolute_url(self):
+    #     return reverse("usun",
+    #                    args=[self.last_reported.year,
+    #                          self.last_reported.month,
+    #                          self.last_reported.day,
+    #                          self.pk
+    #                          ])
 

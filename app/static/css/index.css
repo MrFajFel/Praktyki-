@@ -19,7 +19,24 @@
     margin-top: 2em;
     flex-wrap: wrap;
 }
-
+.wyloguj{
+    position: absolute;
+    right: 1%;
+    top: 1%;
+}
+.wylogujBTN{
+    text-decoration: none;
+    color: white;
+    background-color: #1F2D33;
+    padding: 0.5rem;
+    border-radius: 10%;
+}
+.wylogujBTN:hover{
+    text-decoration: none;
+    color: black;
+    background-color: #FAF9F9;
+    animation: normal 1s animacjaguzik;
+}
 
 
 .logi{
@@ -64,16 +81,6 @@
     align-items: flex-end;
     margin: 1rem;
 }
-@keyframes animacjaguzik {
-    0%{
-        background-color: #1F2D33;
-    }
-    100%{
-        background-color: #FAF9F9;
-    }
-
-}
-
 
 .baseh1{
     animation: normal 2s animacjadoh1;
@@ -98,6 +105,16 @@
     }
     100%{
         opacity: 1;
+    }
+
+}
+
+@keyframes animacjaguzik {
+    0%{
+        background-color: #1F2D33;
+    }
+    100%{
+        background-color: #FAF9F9;
     }
 
 }
