@@ -23,13 +23,15 @@
     position: absolute;
     right: 1%;
     top: 1%;
+    margin-top: 0.5rem;
 }
 .wylogujBTN{
     text-decoration: none;
     color: white;
     background-color: #1F2D33;
     padding: 0.5rem;
-    border-radius: 10%;
+    border-radius: 12%;
+    margin-top:0.5rem;
 }
 .wylogujBTN:hover{
     text-decoration: none;
