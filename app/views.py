@@ -33,15 +33,7 @@ class API(APIView):
             return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
         else:
             return Response({"status": "error", "data": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
-#
-# class Info(ListView):
-#     queryset = User.objects.all()
-#     context_object_name = 'infos'
-#     paginate_by = 9
-#     template_name = 'logs.html'
-#     def sprawdzenie(request):
-#         if request.COOKIES.get('Zalogowany') != '1':
-#             return redirect('app:logowanie')
+
 class Info(ListView):
     queryset = User.objects.all()
     context_object_name = 'infos'
@@ -56,17 +48,6 @@ class Info(ListView):
 
         # Jeśli ciasteczko jest poprawne, kontynuuj z renderowaniem widoku
         return super().get(request, *args, **kwargs)
-
-
-
-
-def info_detail(request,year,month,day):
-    info = get_object_or_404(User,
-                                last_reported__year = year,
-                                last_reported__month = month,
-                                last_reported__day = day,
-                                )
-    return render(request,"logs.html" ,{'infos': infos})
 
 
 def logowanie(request):
