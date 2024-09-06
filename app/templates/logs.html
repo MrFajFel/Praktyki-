@@ -13,7 +13,7 @@
                     Zgłoszono: {{ info.last_reported }} </br>
                     Komputer: {{ info.computer }}
                 </p>
-                <a href="delete/{{ info.last_reported|date:'Y/m/d' }}" class="DoinnejStrony"><span> Usuń </span></a>
+                <a href="delete/{{ info.last_reported|date:'Y/m/d/H/i/s' }}" class="DoinnejStrony"><span> Usuń </span></a>
              </div>
         {% endfor %}
 

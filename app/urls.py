@@ -8,5 +8,5 @@ urlpatterns = [
     path('logs/',views.Info.as_view() ,name='info'),
     path('',views.logowanie, name="logowanie"),
     path('wylogowanie/', views.wyloguj, name="wylogowanie"),
-    path('logs/delete/<int:year>/<int:month>/<int:day>/', views.delete_info, name='delete_info'),
+    path('logs/delete/<int:year>/<int:month>/<int:day>/<int:hour>/<int:minute>/<int:seconds>', views.delete_info, name='delete_info'),
 ]

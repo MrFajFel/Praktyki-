@@ -103,11 +103,14 @@ def wyloguj(request):
     return response
 
 
-def delete_info(request, year, month, day):
+def delete_info(request, year, month, day,hour,minute,seconds):
     info = get_object_or_404(User,
                              last_reported__year=year,
                              last_reported__month=month,
                              last_reported__day=day,
+                             last_reported__hour=hour,
+                             last_reported__minute=minute,
+                             last_reported__second=seconds,
                              )
     info.delete()
     return redirect('/logs')
