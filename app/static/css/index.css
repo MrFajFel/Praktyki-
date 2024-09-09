@@ -55,7 +55,7 @@
 }
 .DoinnejStrony{
     height: 2rem;
-    width: 80%;
+    width: 90%;
     text-decoration: none;
     background-color: #1F2D33;
     color: white;
@@ -70,7 +70,7 @@
     color: black;
     animation: normal 1s animacjaguzik;
     height: 2rem;
-    width: 80%;
+    width: 90%;
     text-decoration: none;
     display: flex;
     justify-content: center;
